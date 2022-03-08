@@ -17,33 +17,32 @@
         android:textColor="@color/white"/>
 
     <TextView
+        android:id="@+id/tak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/graTekst"
-        android:text="talia kart"
-        android:layout_alignParentRight="true"
-        android:id="@+id/tak"/>
+        android:layout_centerHorizontal="true"
+        android:text="kupier"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/graTekst"
-        android:text="twoje karty"
-        android:id="@+id/twk"/>
+        android:layout_below="@id/losowaKarta"
+        android:text="gracz"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:id="@+id/twk"
+        android:layout_centerHorizontal="true"/>
 
     <ImageView
         android:id="@+id/losowaKarta"
-        android:layout_width="200dp"
-        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
         android:layout_below="@id/tak"
-        android:layout_alignParentRight="true"/>
-
-    <ImageView
-        android:id="@+id/przeciwnik"
-        android:layout_width="200dp"
-        android:layout_height="500dp"
-        android:layout_below="@id/twk"
-        />
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/dane"
@@ -55,25 +54,24 @@
     <ImageSwitcher
         android:id="@+id/mojeKarty"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="match_parent"
         android:layout_above="@id/nastepnaKrata"
-        />
+        android:layout_below="@+id/twk"/>
 
     <Button
         android:id="@+id/koniecGry"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="koniec gry"
-        />
+        android:text="koniec gry" />
 
     <Button
         android:id="@+id/nastepnaKrata"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_above="@id/koniecGry"
+        android:layout_centerHorizontal="true"
         android:text="Dobierz karte"/>
 
 </RelativeLayout>
