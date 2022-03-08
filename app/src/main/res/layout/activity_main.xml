@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#00994C">
+
+    <TextView
+        android:id="@+id/graTekst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gra Oczko"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:id="@+id/losowaKarta"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@id/graTekst"/>
+
+    <TextView
+        android:id="@+id/dane"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/losowaKarta"
+        android:text=""/>
+
+    <ImageSwitcher
+        android:id="@+id/mojeKarty"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_above="@id/nastepnaKrata"
+        />
+
+    <Button
+        android:id="@+id/koniecGry"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:text="koniec gry"
+        />
+
+    <Button
+        android:id="@+id/nastepnaKrata"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Dobierz karte"/>
+
+</RelativeLayout>
