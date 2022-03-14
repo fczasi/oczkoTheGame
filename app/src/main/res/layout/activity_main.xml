@@ -5,73 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#00994C">
+    android:background="#006600">
 
     <TextView
         android:id="@+id/graTekst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gra Oczko"
-        android:textSize="30sp"
         android:gravity="center"
+        android:text="Oczko The Game"
+        android:textSize="30sp"
         android:textColor="@color/white"/>
-
-    <TextView
-        android:id="@+id/tak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/graTekst"
-        android:layout_centerHorizontal="true"
-        android:text="kupier"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/losowaKarta"
-        android:text="gracz"
-        android:textSize="30dp"
-        android:textColor="@color/white"
-        android:id="@+id/twk"
-        android:layout_centerHorizontal="true"/>
 
     <ImageView
         android:id="@+id/losowaKarta"
         android:layout_width="match_parent"
-        android:layout_height="275dp"
-        android:layout_below="@id/tak"
-        android:layout_alignParentRight="true" />
+        android:layout_height="500dp"
+        android:layout_below="@id/graTekst"/>
 
     <TextView
         android:id="@+id/dane"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/losowaKarta"
-        android:text=""/>
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
 
-    <ImageSwitcher
-        android:id="@+id/mojeKarty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/nastepnaKrata"
-        android:layout_below="@+id/twk"/>
+
 
     <Button
         android:id="@+id/koniecGry"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="koniec gry" />
+        android:layout_alignParentLeft="true"
+        android:text="koniec gry"/>
 
     <Button
         android:id="@+id/nastepnaKrata"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/koniecGry"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:text="Dobierz karte"/>
 
 </RelativeLayout>

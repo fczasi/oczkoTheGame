@@ -140,11 +140,6 @@ public class listyKart {
                     R.drawable.trefl7,
                     R.drawable.pik7,
             },
-            {R.drawable.karo7,
-                    R.drawable.kier7,
-                    R.drawable.trefl7,
-                    R.drawable.pik7,
-            },
             {R.drawable.karo8,
                     R.drawable.kier8,
                     R.drawable.trefl8,
@@ -154,6 +149,11 @@ public class listyKart {
                     R.drawable.kier9,
                     R.drawable.trefl9,
                     R.drawable.pik9,
+            },
+            {R.drawable.karo10,
+                    R.drawable.kier10,
+                    R.drawable.trefl10,
+                    R.drawable.pik10,
             },
             {R.drawable.karojopek,
                     R.drawable.kierjopek,
@@ -169,7 +169,23 @@ public class listyKart {
                     R.drawable.kierkrol,
                     R.drawable.treflkrol,
                     R.drawable.pikkrol,
+            },
+            {R.drawable.karoas,
+                    R.drawable.kieras,
+                    R.drawable.treflas,
+                    R.drawable.pikas,
             }
 
     };
+
+    private int[] punktyLista = {
+            2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 11
+    };
+
+    public int[][] getKartyRodzaje(){
+        return naRodzaje.clone();
+    }
+    public int[] getKartyPunkty(){
+        return punktyLista.clone();
+    }
 }
