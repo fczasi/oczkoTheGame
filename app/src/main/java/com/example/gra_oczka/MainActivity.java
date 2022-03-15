@@ -126,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
         danek.setText(punktyk+"");
         ileKart++;
         if (punktyk > 16){
-            danek.setText("krupier nie może dobrać więcej kart" + punktyk);
-            nastepnaKarta.setEnabled(false);
+            danek.setText("krupier nie może dobrać więcej kart: " + punktyk);
+            losowaKartaK.setEnabled(false);
         }else if(punktyk < 21){
             danek.setText(punktyk + "");
         }else if(punktyk == 21){
