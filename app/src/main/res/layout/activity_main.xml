@@ -36,7 +36,7 @@
         android:layout_below="@id/losowaKarta"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="25sp" />
+        android:textSize="15sp" />
     <TextView
         android:id="@+id/danekrupiera"
         android:layout_width="540px"
@@ -45,7 +45,7 @@
         android:layout_alignParentRight="true"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="25sp" />
+        android:textSize="15sp" />
 
 
     <Button

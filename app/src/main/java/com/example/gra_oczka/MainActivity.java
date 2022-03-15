@@ -125,8 +125,10 @@ public class MainActivity extends AppCompatActivity {
         punktyk += punktyLista[numer];
         danek.setText(punktyk+"");
         ileKart++;
-        if(punktyk < 21){
-
+        if (punktyk > 16){
+            danek.setText("krupier nie może dobrać więcej kart" + punktyk);
+            nastepnaKarta.setEnabled(false);
+        }else if(punktyk < 21){
             danek.setText(punktyk + "");
         }else if(punktyk == 21){
             danek.setText("WYGRANA" + " Punkty krupiera: " + punktyk);
