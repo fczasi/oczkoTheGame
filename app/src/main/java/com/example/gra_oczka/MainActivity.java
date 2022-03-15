@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     int[] mojeKarty = new int[10];
     int punkty = 0;
     int ileKart = 0;
+    int punktyk = 0;
 
 
     @Override
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 losujKarte();
+                losujKarteKrupiera();
             }
         });
 
@@ -68,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        koniecGry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                danek.setText("Punkty krupiera: " + punkty);
+                nastepnaKarta.setEnabled(false);
+            }
+        });
 
     }
 
@@ -120,25 +129,25 @@ public class MainActivity extends AppCompatActivity {
         listaKart[numer][rodzaj] = 0;
         mojeKarty[ileKart] = punktyLista[numer];
 
-        punkty += punktyLista[numer];
-        danek.setText(punkty+"");
+        punktyk += punktyLista[numer];
+        danek.setText(punktyk+"");
         ileKart++;
-        if(punkty < 21){
+        if(punktyk < 21){
 
-            danek.setText(punkty + "");
-        }else if(punkty == 21){
-            danek.setText("WYGRANA" + " twoje punkty: " + punkty);
+            danek.setText(punktyk + "");
+        }else if(punktyk == 21){
+            danek.setText("WYGRANA" + " Punkty krupiera: " + punktyk);
             nastepnaKarta.setEnabled(false);
-        }else if(punkty > 21){
-            if(punkty == 22){
+        }else if(punktyk > 21){
+            if(punktyk == 22){
                 if(mojeKarty.length == 2){
                     danek.setText("WYGRANA" + " Pawie oczko");
                 }else{
-                    danek.setText("PRZEGRANA   " + punkty);
+                    danek.setText("PRZEGRANA   " + punktyk);
                     nastepnaKarta.setEnabled(false);
                 }
             }else{
-                danek.setText("PRZEGRANA   " + punkty);
+                danek.setText("PRZEGRANA   " + punktyk);
                 nastepnaKarta.setEnabled(false);
             }
         }
@@ -149,8 +158,9 @@ public class MainActivity extends AppCompatActivity {
         listaKart = wszystkieKarty.getKartyRodzaje();
         mojeKarty = new int[10];
         punkty = 0;
+        punktyk = 0;
         dane.setText("");
-        dane.setText("");
+        danek.setText("");
         ileKart = 0;
         losowaKarta.setImageResource(R.drawable.ngscreen);
         losowaKartaK.setImageResource(R.drawable.ngscreen);
