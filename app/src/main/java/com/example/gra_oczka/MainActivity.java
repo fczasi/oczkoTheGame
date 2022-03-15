@@ -66,14 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dane.setText("Twoje punkty: " + punkty);
-                nastepnaKarta.setEnabled(false);
-            }
-        });
-
-        koniecGry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                danek.setText("Punkty krupiera: " + punkty);
+                danek.setText("Punkty krupiera: " + punktyk);
                 nastepnaKarta.setEnabled(false);
             }
         });
