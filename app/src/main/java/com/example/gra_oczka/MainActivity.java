@@ -3,6 +3,7 @@ package com.example.gra_oczka;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -26,25 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private Random random2= new Random();
 
     private static int[] punktyLista = {
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            2,
-            3,
-            4,
-            11
+            2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 11
     };
 
-    int[] mojeKarty = new int[10];
 
+    int[] mojeKarty = new int[10];
     int punkty = 0;
     int ileKart = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         nastepnaKarta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 losujKarte();
             }
         });
@@ -77,10 +71,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void losujKarte(){
-        int numer = random1.nextInt(13);
-        int rodzaj = random2.nextInt(4);
-        losowaKarta.setImageResource(listaKart[numer][rodzaj]);
+        int numer, rodzaj;
 
+        do{
+            numer = random1.nextInt(13);
+            rodzaj = random2.nextInt(4);
+        }while (listaKart[numer][rodzaj] == 0);
+
+        losowaKarta.setImageResource(listaKart[numer][rodzaj]);
+        listaKart[numer][rodzaj] = 0;
         mojeKarty[ileKart] = punktyLista[numer];
 
         punkty += punktyLista[numer];
@@ -91,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             dane.setText(punkty + "");
         }else if(punkty == 21){
             dane.setText("WYGRANA" + " twoje punkty: " + punkty);
+            nastepnaKarta.setEnabled(false);
         }else if(punkty > 21){
             if(punkty == 22){
                 if(mojeKarty.length == 2){
@@ -104,6 +104,17 @@ public class MainActivity extends AppCompatActivity {
                 nastepnaKarta.setEnabled(false);
             }
         }
+
+    }
+
+    public void nowaGra(View view){
+        listaKart = wszystkieKarty.getKartyRodzaje();
+        mojeKarty = new int[10];
+        punkty = 0;
+        dane.setText("");
+        ileKart = 0;
+        losowaKarta.setImageResource(R.drawable.ngscreen);
+        nastepnaKarta.setEnabled(true);
 
     }
 
