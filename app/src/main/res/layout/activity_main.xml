@@ -18,18 +18,34 @@
 
     <ImageView
         android:id="@+id/losowaKarta"
-        android:layout_width="match_parent"
+        android:layout_width="540px"
         android:layout_height="500dp"
         android:layout_below="@id/graTekst" />
 
+    <ImageView
+        android:id="@+id/losowaKartaKrupiera"
+        android:layout_width="540px"
+        android:layout_height="500dp"
+        android:layout_below="@id/graTekst"
+        android:layout_alignParentRight="true" />
+
     <TextView
         android:id="@+id/dane"
-        android:layout_width="match_parent"
+        android:layout_width="540px"
         android:layout_height="wrap_content"
         android:layout_below="@id/losowaKarta"
         android:text=""
-        android:textSize="25sp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/danekrupiera"
+        android:layout_width="540px"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/losowaKarta"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25sp" />
 
 
     <Button
@@ -44,9 +60,9 @@
         android:id="@+id/nastepnaKrata"
         android:layout_width="150dp"
         android:layout_height="160px"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Dobierz karte"/>
+        android:layout_alignParentBottom="true"
+        android:text="Dobierz karte" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="160px"

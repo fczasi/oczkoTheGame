@@ -20,12 +20,11 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Button nastepnaKarta, koniecGry;
-    private ImageView losowaKarta;
-    private TextView dane;
+    private ImageView losowaKarta, losowaKartaK;
+    private TextView dane, danek;
 
     private listyKart wszystkieKarty = new listyKart();
     private int[][] listaKart = wszystkieKarty.getKartyRodzaje();
-    //private int[] listaPunktow = wszystkieKarty.getKartyPunkty();
     private Random random1= new Random();
     private Random random2= new Random();
 
@@ -48,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         koniecGry = findViewById(R.id.koniecGry);
         losowaKarta = findViewById(R.id.losowaKarta);
         dane = findViewById(R.id.dane);
+        danek = findViewById(R.id.danekrupiera);
+        losowaKartaK = findViewById(R.id.losowaKartaKrupiera);
 
 
 
@@ -107,13 +108,52 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void losujKarteKrupiera(){
+        int numer, rodzaj;
+
+        do{
+            numer = random1.nextInt(13);
+            rodzaj = random2.nextInt(4);
+        }while (listaKart[numer][rodzaj] == 0);
+
+        losowaKartaK.setImageResource(listaKart[numer][rodzaj]);
+        listaKart[numer][rodzaj] = 0;
+        mojeKarty[ileKart] = punktyLista[numer];
+
+        punkty += punktyLista[numer];
+        danek.setText(punkty+"");
+        ileKart++;
+        if(punkty < 21){
+
+            danek.setText(punkty + "");
+        }else if(punkty == 21){
+            danek.setText("WYGRANA" + " twoje punkty: " + punkty);
+            nastepnaKarta.setEnabled(false);
+        }else if(punkty > 21){
+            if(punkty == 22){
+                if(mojeKarty.length == 2){
+                    danek.setText("WYGRANA" + " Pawie oczko");
+                }else{
+                    danek.setText("PRZEGRANA   " + punkty);
+                    nastepnaKarta.setEnabled(false);
+                }
+            }else{
+                danek.setText("PRZEGRANA   " + punkty);
+                nastepnaKarta.setEnabled(false);
+            }
+        }
+
+    }
+
     public void nowaGra(View view){
         listaKart = wszystkieKarty.getKartyRodzaje();
         mojeKarty = new int[10];
         punkty = 0;
         dane.setText("");
+        dane.setText("");
         ileKart = 0;
         losowaKarta.setImageResource(R.drawable.ngscreen);
+        losowaKartaK.setImageResource(R.drawable.ngscreen);
         nastepnaKarta.setEnabled(true);
 
     }
